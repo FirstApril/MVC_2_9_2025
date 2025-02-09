@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Edit Pet</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash-message">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="post">
+            <label>Last Health Check (DD/MM/YYYY):</label>
+            <input type="text" name="last_health_check" value="{{ pet.last_health_check }}" required>
+
+            <label>Vaccine Count:</label>
+            <input type="number" name="vaccine_count" value="{{ pet.vaccine_count }}" required>
+
+            {% if pet.pet_type == "Phoenix" %}
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="fireproof_cert" {% if "Yes" in pet.additional_info %}checked{% endif %}>
+                        Fireproof Certificate
+                    </label>
+                </div>
+            {% else %}
+                <label>Additional Info:</label>
+                <span>{{ pet.additional_info.split(':')[0] }}:</span>
+                <input type="number" name="additional_info_value" value="{{ pet.additional_info.split(':')[-1].strip().split(' ')[0] }}" required>
+                <span>
+                    {% if pet.pet_type == "Dragon" %} % 
+                    {% elif pet.pet_type == "Owl" %} km
+                    {% endif %}
+                </span>
+            {% endif %}
+
+            <!-- Buttons in One Row -->
+            <div class="btn-group">
+                <button type="submit" class="btn btn-blue">Update</button>
+                <a href="{{ url_for('view_pets') }}" class="btn btn-gray btn-link">Back to Pet List</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

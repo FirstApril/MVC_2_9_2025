@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Pet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add a Pet</h2>
+
+        <p>Select the type of pet you want to add:</p>
+
+        <div class="btn-group-vertical">
+            <a href="{{ url_for('add_phoenix') }}" class="btn btn-red">Add Phoenix</a>
+            <a href="{{ url_for('add_dragon') }}" class="btn btn-green">Add Dragon</a>
+            <a href="{{ url_for('add_owl') }}" class="btn btn-yellow">Add Owl</a>
+            <a href="{{ url_for('index') }}" class="btn btn-gray btn-link">Back to Home</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

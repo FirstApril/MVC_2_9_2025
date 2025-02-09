@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Phoenix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add Phoenix</h2>
+
+        <form method="post">
+            <label>Last Health Check (DD/MM/YYYY):</label>
+            <input type="text" name="last_health_check" required>
+
+            <label>Vaccine Count:</label>
+            <input type="number" name="vaccine_count" required>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="fireproof_cert">
+                    Fireproof Certificate
+                </label>
+            </div>
+
+            <!-- Buttons in One Row -->
+            <div class="btn-group">
+                <button type="submit" class="btn btn-red">Add Phoenix</button>
+                <a href="{{ url_for('index') }}" class="btn btn-gray btn-link">Back to Home</a>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>

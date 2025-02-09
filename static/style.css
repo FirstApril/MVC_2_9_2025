@@ -1,0 +1,145 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Form Container */
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+/* Flash Message Styling */
+.flash-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+    text-align: left;
+}
+
+/* Centering Input Fields */
+input[type="text"], input[type="number"] {
+    width: 95%;  /* Reduce width for better centering */
+    padding: 10px;
+    margin: 5px auto;  /* Center vertically */
+    display: block;  /* Ensures proper alignment */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center; /* Center text inside inputs */
+}
+
+/* Checkbox */
+.checkbox-group {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Button Container (for side-by-side buttons) */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Centered Button Group */
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center align buttons */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Button Container (for side-by-side buttons) */
+.btn-group {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Smaller Buttons */
+.btn {
+    width: 45%;  /* Make buttons smaller */
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Fix: Ensure consistency for <a> buttons */
+.btn-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Button Colors */
+.btn-red {
+    background: #e63946;
+    color: white;
+}
+
+.btn-red:hover {
+    background: #d62839;
+}
+
+.btn-green {
+    background: #2a9d8f;
+    color: white;
+}
+
+.btn-green:hover {
+    background: #21867a;
+}
+
+.btn-yellow {
+    background: #f4a261;
+    color: white;
+}
+
+.btn-yellow:hover {
+    background: #e78b43;
+}
+
+.btn-blue {
+    background: #007BFF;
+    color: white;
+}
+
+.btn-blue:hover {
+    background: #0056b3;
+}
+
+.btn-gray {
+    background: #555;
+    color: white;
+}
+
+.btn-gray:hover {
+    background: #333;
+}

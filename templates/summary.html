@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pet Summary</h1>
+
+        <!-- Summary Stats -->
+        <table>
+            <tr>
+                <th>Total Pets</th>
+                <td>{{ report.total_pets }}</td>
+            </tr>
+            <tr>
+                <th>Accepted Pets</th>
+                <td>{{ report.accepted_pets }}</td>
+            </tr>
+            <tr>
+                <th>Rejected Pets</th>
+                <td>{{ report.rejected_pets }}</td>
+            </tr>
+        </table>
+
+        <!-- Pet Count Table -->
+        <h2>Pet Count by Type</h2>
+        <table>
+            <tr>
+                <th>Pet Type</th>
+                <th>Count</th>
+            </tr>
+            {% for pet, count in report.pet_counts.items() %}
+            <tr>
+                <td>{{ pet }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Back to Home Button -->
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+
+</body>
+</html>
